@@ -1,0 +1,152 @@
+/*** Import fonts ***/
+@font-face {
+  font-family: interBold;
+  src: url('/assets/fonts/static/Inter-Bold.ttf');
+}
+@font-face {
+  font-family: interSemiBold;
+  src: url('/assets/fonts/static/Inter-SemiBold.ttf');
+}
+@font-face {
+  font-family: interRegular;
+  src: url('/assets/fonts/static/Inter-Regular.ttf');
+}
+
+/*** Declaration variables ***/
+:root {
+  --clr-green: #cdeb69;
+  --clr-white: #ffffff;
+  --clr-light-gray: #d8d8d8;
+  --clr-gray: #333333;
+  --clr-dark-gray: #1f1f1f;
+  --clr-dark: #141414;
+}
+
+/*** Reset CSS ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  min-height: 100vh;
+  background-color: var(--clr-dark);
+  color: var(--clr-white);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 3rem);
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: clamp(21rem, 75vw, 25rem);
+  background-color: var(--clr-dark-gray);
+  margin-block: 3rem;
+  padding-block: 3rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: box-shadow 0.3s ease-in-out;
+  &__wrapper-pict {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    border: 3px solid var(--clr-gray);
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0) 0px 10px 20px, rgba(0, 0, 0, 0) 0px 6px 6px;
+  }
+  &:hover img {
+    transform: scale(1.12);
+  }
+  &__name {
+    font-family: interBold, sans-serif;
+    font-size: 1.7rem;
+  }
+  &__location {
+    font-family: interSemiBold, sans-serif;
+    color: var(--clr-green);
+  }
+  &__description {
+    font-family: interRegular, sans-serif;
+  }
+  &__wrapper-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: interSemiBold, sans-serif;
+    width: 100%;
+    margin-top: 1rem;
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      width: calc(100% - 6rem);
+      height: 3rem;
+      border-radius: 0.5rem;
+      background-color: var(--clr-gray);
+      color: var(--clr-white);
+      margin-block: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    .btn:hover {
+      box-shadow: rgba(0, 0, 0, 0) 0px 10px 20px, rgba(0, 0, 0, 0) 0px 6px 6px;
+      color: var(--clr-green);
+    }
+  }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 100%;
+  margin-top: auto;
+  font-family: interRegular, sans-serif;
+  .attribution {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .attribution a {
+    text-decoration: none;
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+/*** Utils ***/
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
+}
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+.mb-4 {
+  margin-bottom: 2rem;
+}
